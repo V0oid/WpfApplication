@@ -1,0 +1,47 @@
+﻿<Window x:Class="TIProjekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TIProjekt"
+        Title="TSERVIECE" Height="650" Width="1200">
+    <Border x:Name="Brd_Main">
+        <Grid Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+           
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                     
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+ 
+                </Grid>
+            
+            <Image Grid.Row="1" Source="/images/app/logo.png" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <StackPanel Grid.Row="2" Background="Transparent">
+                <StackPanel>
+                    <RadioButton x:Name="RB_ComapnyProfile" Content="Firma" Height="50" FontSize="14"  Click="CompanyProfile_cliked"/>
+                    <RadioButton Content="Strona glowna" Height="50" FontSize="14" IsChecked="True" Click="Home_clicked"/>
+                    <RadioButton Content="Zarzadzanie firma " Height="50"  FontSize="14"  Click="Company_clicked"/>
+                </StackPanel>
+                <StackPanel  VerticalAlignment="Bottom">
+                    <Button  Click="LogOut_clicked" Content="Wyloguj się" Background="Red"/>
+                </StackPanel>
+            </StackPanel>
+            <Frame x:Name="Page" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="2"/>
+        </Grid>
+    </Border>
+</Window>

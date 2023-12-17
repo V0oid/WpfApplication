@@ -1,0 +1,245 @@
+﻿<Page x:Class="TIProjekt.Pages.AnnouncmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TIProjekt.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AnnouncmentPage">
+
+    <ScrollViewer>
+        <StackPanel >
+            <Button Padding="10" Margin="10" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Click="Btn_Back_Click">
+                <Image Source="/Images/App/back.png" MaxHeight="20"/>
+            </Button>
+            <Grid x:Name="G_Page" HorizontalAlignment="Center" Margin="0,100,0,100">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"/>
+                </Grid.ColumnDefinitions>
+                <Border Background="White" CornerRadius="5,5,0,0" Padding="0,0,0,25" BorderBrush="#dadada" BorderThickness="0.5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="I_ComapnyImage" Source="{Binding CompanyImage}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <Label x:Name="Lbl_Name" Content="{Binding Name}" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                            <Label x:Name="Lbl_ComanyName" Content="{Binding CompanyName}" VerticalAlignment="Center" FontSize="10"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1" Background="White" Height="auto" CornerRadius="0,0,5,5" Margin="0,0,0,10" BorderBrush="#dadada" BorderThickness="0.2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Column="0" Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Transparent" Background="#dadada" CornerRadius="5" Margin="2" Padding="5">
+                                <Label>Lokacja</Label>
+                            </Border>
+                            <Label x:Name="Lbl_Adress" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Transparent" Background="#dadada" CornerRadius="5" Margin="2" Padding="5">
+                                <Label HorizontalAlignment="Center" >Czas</Label>
+                            </Border>
+                            <Label x:Name="Lbl_EndDate" VerticalAlignment="Center" Grid.Column="1" FontSize="15"/>
+                        </Grid>
+                        <Grid Grid.Column="0" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Transparent" Background="#dadada" CornerRadius="5" Margin="2" Padding="5">
+                                <Label HorizontalAlignment="Center">Pozycja</Label>
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <Label x:Name="Lbl_Position" FontSize="15"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Transparent" Background="#dadada" CornerRadius="5" Margin="2" Padding="5">
+                                <Label HorizontalAlignment="Center">Etat</Label>
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <Label x:Name="Lbl_WorkTime" FontSize="15"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="0" Grid.Row="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Transparent" Background="#dadada" CornerRadius="5" Margin="2" Padding="5">
+                                <Label>szukamy</Label>
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <Label x:Name="Lbl_PositionLevel" FontSize="15"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Transparent" Background="#dadada" CornerRadius="5" Margin="5" Padding="5">
+                                <Label HorizontalAlignment="Center">Praca</Label>
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <Label x:Name="Lbl_WorkType" FontSize="15"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="0" Grid.Row="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Transparent" Background="#dadada" CornerRadius="5" Margin="5" Padding="5">
+                                <Label HorizontalAlignment="Center">tryb</Label>
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <Label Content="rekrutacja zdalna" FontSize="15"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="2" Background="White" CornerRadius="5" Margin="0,10,0,10" BorderBrush="#dadada" BorderThickness="0.2">
+                    <StackPanel>
+                        <Label Content="zakres obowiązków" FontSize="15" FontWeight="Bold"/>
+                        <ListView x:Name="LV_Responsibilities" Background="Transparent" BorderThickness="0">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="IsHitTestVisible" Value="True"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListViewItem">
+                                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Column="1" Text="{Binding Content}" TextWrapping="WrapWithOverflow" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="3" Background="White" CornerRadius="5" Margin="0,10,0,10" BorderBrush="#dadada" BorderThickness="0.2">
+                    <StackPanel>
+                        <Label Content=" wymagania" FontSize="15" FontWeight="Bold"/>
+                        <ListView x:Name="LV_Requirements" Background="Transparent" BorderThickness="0">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="IsHitTestVisible" Value="True"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListViewItem">
+                                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Column="1" Text="{Binding Content}" TextWrapping="WrapWithOverflow" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+            
+                <Border Grid.Row="5" Background="White" CornerRadius="5" Margin="0,10,0,10" BorderBrush="#dadada" BorderThickness="0.2">
+                    <StackPanel Margin="10  ">
+                        <TextBlock Text="Opis" FontSize="20" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="2,10,2,10"/>
+                    </StackPanel>
+                </Border>
+                <Border x:Name="Br_Application" Grid.Row="6" Visibility="Collapsed" Background="#dadada" CornerRadius="5" Margin="0,10,0,10" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#dadada" BorderThickness="0.2">
+                    <Button x:Name="Btn_Application" Content="Aplikuj" Padding="10" Click="Btn_Application_Click"/>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+   
+    
+</Page>

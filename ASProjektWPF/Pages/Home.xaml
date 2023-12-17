@@ -1,0 +1,87 @@
+﻿<Page x:Class="TIProjekt.Pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TIProjekt.Pages"
+      mc:Ignorable="d" 
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home">
+
+    <ScrollViewer>
+        <StackPanel>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border x:Name="BR_Items" Grid.Column="1" BorderThickness="1" Background="White" CornerRadius="10" Margin="10,0,0,0" Padding="1" Grid.ColumnSpan="2">
+                    <ScrollViewer MaxHeight="300" Padding="10" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="IC_ItemsToChecked" Margin="15,0,0,0">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black" Padding="5" Margin="5">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding Checked}" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Name}" Padding="5" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Count,StringFormat='({0})'}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+            <StackPanel Margin="0,120,0,0">
+                <TextBlock Text="OFERTY" HorizontalAlignment="Center" FontWeight="Bold" FontSize="30" Margin="5"/>
+            </StackPanel>
+            <Grid Margin="0,50,0,0" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <WrapPanel Grid.Row="1" MaxWidth="1400">
+                    <ItemsControl x:Name="Announcments">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border CornerRadius="10" BorderThickness="1" BorderBrush="Black"  Margin="5">
+                                    <StackPanel>
+                                   
+                                        <TextBlock Text="{Binding Name}" TextWrapping="Wrap" />
+                                        <Image Source="{Binding CompanyImage}"  Width="128px" Margin="40"/>
+                                        <StackPanel Grid.Column="1" Grid.Row="1">
+                                            <TextBlock Text="{Binding PositionName}" TextWrapping="Wrap" FontSize="15"/>
+                                            <TextBlock Text="{Binding City}" FontSize="10"/>
+                                        </StackPanel>
+                                        <Button Margin="10"  Content="Zobacz" CommandParameter="{Binding .}" Click="Btn_GoToAnnouncment_Click"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </WrapPanel>
+            </Grid>
+  
+            
+        </StackPanel>
+        
+       
+    </ScrollViewer>
+</Page>

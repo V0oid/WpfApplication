@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\App\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Files\**" />
+    <EmbeddedResource Remove="Files\**" />
+    <None Remove="Files\**" />
+    <Page Remove="Files\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\App\back.png" />
+    <None Remove="Images\App\company.jpg" />
+    <None Remove="Images\App\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\App\logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\App\company.jpg" />
+    <Resource Include="Images\App\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\App\back.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
